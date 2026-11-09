@@ -33,7 +33,6 @@
     "Hijacker application end-to-end",
     "Hijacker bundled tool binaries on this phone",
     "complete WPA handshake capture",
-    "aireplay-ng monitor transmission",
     "channel hopping",
     "5 GHz or 6 GHz monitor reception",
     "simultaneous monitor RX and managed TX"
@@ -76,5 +75,10 @@
       "sha256": "20af356d6189b0257bad6bda9bc51e65d223afe68f1100e517c41a783f68a282",
       "original_published": false
     }
-  ]
+  ],
+  "subsequent_injection_test": {
+    "date": "2026-11-09",
+    "evidence": "aireplay-test.json",
+    "result": "Completed negative, 0/30 responses after NetHunter initialization"
+  }
 }

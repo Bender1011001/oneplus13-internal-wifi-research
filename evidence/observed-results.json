@@ -100,7 +100,10 @@
   },
   "limits": {
     "independent_rf_capture_of_injected_frame": false,
-    "ap_association_logs_collected": false,
+    "ap_association_logs_collected": true,
+    "ap_association_logs_collected_later_on": "2026-11-09",
+    "ap_log_followup_evidence": "router-log-review.json",
+    "historical_router_clock_alignment_confirmed": false,
     "second_handset_reproduction": false,
     "pmf_bypass_demonstrated": false,
     "arbitrary_packet_injection_demonstrated": false,

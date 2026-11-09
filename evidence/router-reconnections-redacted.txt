@@ -1,0 +1,35 @@
+Router Advanced Log: two target-client reconnection sequences
+Export collected 2026-11-09; original raw export remains private.
+MAC addresses replaced with role labels. Absolute router times replaced with seconds relative to the first router sequence.
+Source line numbers are one-based. Router and phone relative-time origins are distinct and are NOT synchronized.
+These records show reconnection; they do not contain an RF capture or identify a received deauthentication frame/reason.
+
+Sequence: original-directed-test
+[source line 8165; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Connectivity, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, STA is disconnected
+[source line 8166; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Authentication, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Received with algorithm=0, status=SUCCESS
+[source line 8167; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Authentication, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Open System: Authentication OK
+[source line 8168; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Authentication, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Authenticated
+[source line 8169; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Association Request, SA=<OWNED_CLIENT>, DA=<OWNED_AP>
+[source line 8170; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Association Response, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Associated, AID=3
+[source line 8171; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Sending 1/4 msg of 4-Way Handshake
+[source line 8172; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Received EAPOL-Key frame (2/4 Pairwise)
+[source line 8173; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Sending 3/4 msg of 4-Way Handshake
+[source line 8174; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Received EAPOL-Key frame (4/4 Pairwise)
+[source line 8175; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Connectivity, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, STA is connected
+[source line 8176; router T+0.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Pairwise key handshake completed (RSN)
+[source line 8177; router T+0.000s] info arc_wifi: [WIFI.6][ADV] SON-[2.4GHz-IoT]STA(<OWNED_CLIENT>) (Legacy Device) connected
+
+Sequence: later-app-directed-test
+[source line 8285; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Connectivity, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, STA is disconnected
+[source line 8286; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Authentication, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Received with algorithm=0, status=SUCCESS
+[source line 8287; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Authentication, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Open System: Authentication OK
+[source line 8288; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Authentication, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Authenticated
+[source line 8289; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Association Request, SA=<OWNED_CLIENT>, DA=<OWNED_AP>
+[source line 8290; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Association Response, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Associated, AID=3
+[source line 8291; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Sending 1/4 msg of 4-Way Handshake
+[source line 8292; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Received EAPOL-Key frame (2/4 Pairwise)
+[source line 8293; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Sending 3/4 msg of 4-Way Handshake
+[source line 8294; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_CLIENT>, DA=<OWNED_AP>, Received EAPOL-Key frame (4/4 Pairwise)
+[source line 8295; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=Connectivity, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, STA is connected
+[source line 8296; router T+3530.000s] info hostapd: [WIFI.6][ADV]Connection Event: BSS=ath12, ACTION=EAPoL Handshake, SA=<OWNED_AP>, DA=<OWNED_CLIENT>, Pairwise key handshake completed (RSN)
+[source line 8297; router T+3530.000s] info arc_wifi: [WIFI.6][ADV] SON-[2.4GHz-IoT]STA(<OWNED_CLIENT>) (Legacy Device) connected

@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "experiment_date": "2026-11-09",
+  "timezone": "America/Los_Angeles",
+  "primary_result": "completed_negative",
+  "scope": "One handset and build; final run after owner started NetHunter, with chroot mounts verified",
+  "environment": {
+    "build": "CPH2655_16.0.8.301(EX01)",
+    "kernel": "6.6.89-android15-8-g97a9aaefab9a-ab14519050-4k",
+    "module": "qca_cld3_peach_v2",
+    "module_sha256": "d6bd3fac600aaeba858e83292df167bc410457c07e422047c1a181c31d24d3df",
+    "aireplay_binary_sha256": "148ab292402fe76f1829635e810c95f832bd816e8a2b495a3f35d81fba6f0005",
+    "packages": [
+      "aircrack-ng 1:1.7+git20230807.4bf83f1a-3",
+      "tcpdump 4.99.6-2"
+    ],
+    "external_adapter": false,
+    "root_verified_inside_chroot": true,
+    "proc_sys_dev_mounts_verified": true,
+    "proc_meminfo_readable": true,
+    "interface_visible_inside_chroot": true,
+    "path": "/usr/sbin:/usr/bin:/sbin:/bin",
+    "locale": "C.UTF-8"
+  },
+  "setup": {
+    "interface": "wlan0",
+    "driver_mode": 4,
+    "interface_type": "monitor",
+    "requested_channel": 6,
+    "capture_verified_frequency_mhz": 2437,
+    "owned_ap_beacons_captured": 5,
+    "all_five_radiotap_headers_match": true,
+    "iw_channel_field_present": false,
+    "command_redacted": "aireplay-ng --test --ignore-negative-one -a [OWNED_AP] -e [OWNED_SSID] wlan0",
+    "timeout_seconds": 45,
+    "kill_grace_seconds": 3
+  },
+  "result": {
+    "start_utc": "Mon Nov  9 14:34:11 UTC 2026",
+    "end_utc": "Mon Nov  9 14:34:44 UTC 2026",
+    "broadcast_phase": "No Answer...",
+    "listed_access_points": 1,
+    "reported_directed_probe_attempts": 30,
+    "reported_responses": 0,
+    "reported_response_percent": 0,
+    "injection_success_message_seen": false,
+    "process_exit_code": 0,
+    "timed_out": false,
+    "monitor_tx_before": {
+      "bytes": 0,
+      "packets": 0
+    },
+    "monitor_tx_after": {
+      "bytes": 0,
+      "packets": 0
+    },
+    "interpretation": "Process completed; injection did not pass. Zero response count is not independent RF proof that no frame was transmitted."
+  },
+  "restoration": {
+    "driver_mode": 0,
+    "saved_empty_firmware_path_restored": true,
+    "normal_managed_wifi_associated": true,
+    "test_processes_remaining": false,
+    "radio_lock_remaining": false,
+    "recovery_pending": false
+  },
+  "earlier_attempts": [
+    {
+      "attempt": 1,
+      "result": "preflight_stop",
+      "reason": "Incomplete PATH and aireplay channel -1 guard",
+      "injection_test_completed": false
+    },
+    {
+      "attempt": 2,
+      "result": "wrapper_preflight_stop",
+      "reason": "iw monitor interface omitted the expected channel field",
+      "aireplay_launched": false
+    },
+    {
+      "attempt": 3,
+      "result": "completed_negative",
+      "responses": 0,
+      "directed_attempts": 30,
+      "channel_verified_by_capture": true,
+      "chroot_mounts_inventoried": false,
+      "qualification": "Owner reported NetHunter was not started; final run repeated after startup with mounts verified"
+    }
+  ],
+  "limits": {
+    "independent_rf_capture_of_transmitted_probes": false,
+    "other_builds_or_bands_tested": false,
+    "other_aireplay_modes_tested": false,
+    "managed_nl80211_frame_path_retested_here": false,
+    "hijacker_application_tested_here": false
+  },
+  "transcript": "aireplay-output-redacted.txt",
+  "redaction": "Lab BSSID and SSID replaced; terminal carriage returns normalized to newlines; trailing whitespace stripped",
+  "provenance_note": "Originals remain private. Hashes bind retained artifacts but do not independently prove unpublished contents.",
+  "source_artifacts": [
+    {
+      "artifact_label": "initialized-aireplay-output.log",
+      "bytes": 1078,
+      "sha256": "6887dfa0cbffaff46d8f6b253763507d44ce09e9d62c8e32fe71bcc11fb78537",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-aireplay-exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-aireplay-sha256.txt",
+      "bytes": 119,
+      "sha256": "79d994fe5b5d05e69aeb8d87d14261bf318cef0d935cbbed6d41c29a3e1b7329",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-versions.txt",
+      "bytes": 58,
+      "sha256": "e14279a2fb3261ec8f7e516efd537498e8309e58e9e26456be97d1d039b605eb",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-module-sha256.txt",
+      "bytes": 112,
+      "sha256": "5f91e032c8bfc6b301e832ce52b5718d2bbe24594875d7da522b9ac6b4c168b7",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-chroot-mounts.txt",
+      "bytes": 805,
+      "sha256": "c53623b308f2ee47fdbae15ec78b95ed42f27985bb4d82619c44139f70eb6a63",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-chroot-environment.txt",
+      "bytes": 445,
+      "sha256": "ec4a88237e317594e108b354102ce9bffc7dc86bd211e0410ce06a86d1ba8dec",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-chroot-monitor-interface.txt",
+      "bytes": 105,
+      "sha256": "b915dd3b949742fd86068f1c99d8ebd4f5e6019ec8a5daa8598c05f4bee756ca",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-ap-receive-check.pcap",
+      "bytes": 2349,
+      "sha256": "4e0ab3b29a279621c9b9c9d5843560377bb96cab87cbea9e0f5c5f5e5defcebc",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-ap-receive-check.log",
+      "bytes": 192,
+      "sha256": "2b3ce30313fb1947dce28505b9da619cda887dd8f0a8481712450101301daab3",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-ap-channel-check.txt",
+      "bytes": 1393,
+      "sha256": "b2edec89d2cbfb055063326ede35bc773dfda9802398d54ffd96c4bfb654fd18",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-counters-before.txt",
+      "bytes": 411,
+      "sha256": "8bf8c477d1b056c4780fd9e35fdcbc9689dd4431ec88e7215a26188ea86c6c16",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-counters-after.txt",
+      "bytes": 429,
+      "sha256": "afc9bb2d07fd7ca20b6817d255286ed185f454c8bd3b501ef8191c28bb6955b8",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-final-mode.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-final-firmware-path.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-final-link.txt",
+      "bytes": 295,
+      "sha256": "1a55d956968a632e7e0e16e5cac5d2ac3b9c0dbcd4214d2840822e0d7e92bcc3",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-runner.sh",
+      "bytes": 6077,
+      "sha256": "728cec6c1460ba47aa0101487e3c109a1ccb39d0918640505a06a4670908eb57",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initialized-internal-monitor.sh",
+      "bytes": 1388,
+      "sha256": "f2ea9b0133d9defeb6db9b9c2530ab576ce078d67b1d4702527b65dcbc2e2d5a",
+      "original_published": false
+    },
+    {
+      "artifact_label": "post-run-phone-state",
+      "bytes": 1388,
+      "sha256": "3f3488e26d37fee0177566de29bf7d7b33907c19f674f38689de0ef8f469372f",
+      "original_published": false
+    },
+    {
+      "artifact_label": "earlier-completed-aireplay-output.log",
+      "bytes": 1078,
+      "sha256": "5aaeced1c6b187d829c6d9c196faf68c1c1cbc0f0d219148d4f198ff130c83fe",
+      "original_published": false
+    },
+    {
+      "artifact_label": "earlier-completed-ap-receive-check.pcap",
+      "bytes": 2349,
+      "sha256": "7a367001341b0690cdec7aa246580c8bb378db9b52f94f20821a8cfbdacbcc9d",
+      "original_published": false
+    },
+    {
+      "artifact_label": "earlier-completed-ap-channel-check.txt",
+      "bytes": 1393,
+      "sha256": "da5edf2d71bc695dc02dfdb0bb80bf72d585ebd51ffdb6a8770b3873854cbc59",
+      "original_published": false
+    },
+    {
+      "artifact_label": "earlier-completed-counters-after.txt",
+      "bytes": 428,
+      "sha256": "48f7109d2b36fff32c5fd50280384db41a2bec3167c932d3d3b2556cb0b7b28c",
+      "original_published": false
+    },
+    {
+      "artifact_label": "earlier-completed-runner.sh",
+      "bytes": 5208,
+      "sha256": "d4f004f6aad2cf062e61fce3502c058fdd4e67168570718dca7f1efeb810414f",
+      "original_published": false
+    },
+    {
+      "artifact_label": "initial-preflight-aireplay-output",
+      "bytes": 290,
+      "sha256": "1ae8b494f1189516a3c5630368faa64440e6edcb8488d69e84053e8e0d1302f8",
+      "original_published": false
+    },
+    {
+      "artifact_label": "second-preflight-monitor-info",
+      "bytes": 104,
+      "sha256": "ed993f261ca3340af4e540a341b39fb00ce1b37da92ad9ff7c5ccfb7f5734b6e",
+      "original_published": false
+    }
+  ]
+}

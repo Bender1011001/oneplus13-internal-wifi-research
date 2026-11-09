@@ -2,11 +2,15 @@
 
 **Report date:** 2026-11-08 (America/Los_Angeles)
 
+**Follow-up:** 2026-11-09, [aireplay monitor-injection test](AIREPLAY_TEST.md), completed negative after NetHunter startup with mounts verified.
+
 **Status:** Observed on one rooted handset and one software build; independent reproduction pending.
 
 A OnePlus 13 received radiotap captures through its internal Wi-Fi monitor netdev and, in a separate test, submitted a directed deauthentication frame through `NL80211_CMD_FRAME` on managed `wlan0`. The latter produced a matching, driver-reported recipient ACK and a temporary loss of responses from an owned WiZ test bulb, followed by recovery. No external Wi-Fi adapter, replacement kernel/module, or modified firmware image was used.
 
 These are **two separate capabilities**. Monitor reception does not imply monitor-interface transmission. The successful active path uses the driver's management-frame TX implementation while `wlan0` is in managed mode.
+
+The later `aireplay-ng --test` run on monitor `wlan0` received 0/30 directed-probe responses and did not report injection success. Its process exit code was 0, which must not be interpreted as a passing injection test. This separately recorded negative result does not contradict the managed-interface observations below.
 
 > **Authorized hardware only:** Transmit management frames only against hardware you own and are explicitly authorized to test, on a network you control. Deauthentication can interrupt connectivity and interfere with nearby wireless use. Use an isolated lab, a noncritical target, a bounded test, and independent recovery monitoring. Avoid broadcast deauthentication, repeated transmission loops, and production/shared networks. Stop immediately if effects extend beyond the intended target.
 
@@ -125,10 +129,11 @@ The kernel's `android15` release suffix is reproduced as observed even though th
 | Independent pre-test baseline | 28/28 successful read-only bulb queries | Bulb responsive before the experiment |
 | Directed-test observation | 23 successful queries, then 7 consecutive timeouts | Response interruption near the directed request |
 | Later recovery observation | 25/25 successful queries | Bulb responsive again |
+| Router exports reviewed November 9 | Two target-client disconnect/authentication/association/handshake sequences | Independent AP evidence supports the directed tests; historical clock alignment remains unresolved |
 
 The observer sent read-only WiZ `getPilot` queries approximately once per second; it did not change the light state. The phone clock was estimated to be 1.05818 seconds ahead of the observing host (calibration round trip approximately 0.074 seconds). After adjustment, the first failed probe began about 0.60 seconds after submission. The recovery observation began about 25.72 seconds after submission. An observation gap means the exact outage duration is unknown.
 
-A reported ACK does not by itself prove that the receiver processed a deauthentication frame or changed its association state. The ACK plus the target-specific response interruption and recovery supports a successful directed deauthentication test. Independent RF capture of the injected frame and AP association logs would strengthen that interpretation. Neither was collected in this run. Linux documents the distinction between the transmit request, its cookie, and acknowledgement status in the [cfg80211 API](https://docs.kernel.org/driver-api/80211/cfg80211.html).
+A reported ACK does not by itself prove that the receiver processed a deauthentication frame or changed its association state. The ACK plus the target-specific response interruption and recovery supports a successful directed deauthentication test. Neither independent RF capture nor AP association logs were collected during the initial experiment. A [subsequent router-log review](ROUTER_LOG_REVIEW.md) recovered two disconnect/reconnect sequences for the exact client/AP pair, supporting correlation with the original and later app-driven directed tests. Historical router-clock alignment remains unresolved, and the router entries do not identify the submitted frame or its transmitter. Independent RF capture is still missing. Linux documents the distinction between the transmit request, its cookie, and acknowledgement status in the [cfg80211 API](https://docs.kernel.org/driver-api/80211/cfg80211.html).
 
 The [observed-results JSON](../evidence/observed-results.json) contains the sanitized result summary, [probe-observations JSON](../evidence/probe-observations.json) preserves success/failure samples on a relative timeline, and [redacted TX event](../evidence/directed-tx.redacted.json) preserves the request/status relationship without the lab's addresses.
 
@@ -185,6 +190,9 @@ The [OnePlus public driver snapshot](https://github.com/OnePlusOSS/android_kerne
 | `evidence/directed-tx.redacted.json` | Sanitized request and matching TX-status result |
 | `evidence/probe-observations.json` | Per-sample status observations with relative timestamps |
 | `evidence/source-artifacts.json` | Original local evidence filenames, SHA-256 hashes, and disclosure status |
+| `docs/ROUTER_LOG_REVIEW.md` | Later AP-log corroboration with explicit clock and attribution limits |
+| `evidence/router-log-review.json` | Router event counts, relative intervals, and private-source hashes |
+| `evidence/router-reconnections-redacted.txt` | Both target-client reconnection sequences, with addresses and absolute times removed |
 | `SHA256SUMS.txt` | Checksums of the files distributed in this package |
 
 MAC addresses, BSSIDs, SSIDs, private IP addresses, USB serials, absolute local paths, raw frame hex, and absolute probe timestamps are omitted from the distributed evidence. The original raw logs, captures, module binary, and analysis snapshot remain in the local investigation workspace. Source-artifact hashes identify those originals; they do not replace access to the originals or independently prove the experiment. No firmware or kernel-module binary is redistributed.

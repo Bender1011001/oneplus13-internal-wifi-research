@@ -10,7 +10,8 @@ Status: November 9, 2026. Hardware observations refer only to the device/build i
 | airodump-ng AP/station reception | **Tested** through the private Bender Lab backend | NetHunter ARM64 tool, fixed channel, working headless invocation, shared output paths |
 | Hijacker AP/station UI and capture | **Port candidate; app untested** | Replace Nexmon setup, integrate QCA lifecycle/tool runner, deliver CSV/PCAP to the UI, verify cancellation |
 | A directed deauthentication action in a modified app | **Backend mechanism tested; Hijacker integration unimplemented** | Dedicated privileged managed-interface TX operation, fresh interface discovery, TX-status handling, and explicit lab target confirmation |
-| Existing aireplay-ng monitor injection actions | **Not supported by the observed monitor netdev** | The missing monitor TX handler cannot be supplied by an interface-name or prefix setting |
+| `aireplay-ng --test` on monitor `wlan0` | **Completed, negative: 0/30 responses** | Repeated with NetHunter mounts verified; the missing monitor TX handler cannot be supplied by an interface-name or prefix setting |
+| Other aireplay-ng monitor injection actions | **Unsupported by the inspected monitor operations; individual modes untested** | A selected managed-interface operation needs a separate implementation |
 | Reaver/WPS and mdk3 transmit workflows | **Not established** | Audit each operation's required frames, timing, and RX/TX concurrency; the single management-frame result is insufficient |
 | hcxdumptool's normal active workflow | **Not established** | Its documented requirements include full monitor and injection support; this work has not met those requirements |
 | Offline PCAP analysis | **Does not require radio TX** | Validate the exported format and permissions for the chosen consumer; individual app integrations remain untested |
@@ -27,6 +28,8 @@ The installed aircrack-ng package was `1:1.7+git20230807.4bf83f1a-3`. These were
 This test establishes usable receive output. It does not establish Hijacker UI parsing, a complete WPA handshake capture, injection, channel hopping, or end-to-end WPS operation.
 
 ## The integration boundary
+
+The subsequent [aireplay injection test](AIREPLAY_TEST.md) completed twice with 0/30 responses; the second run explicitly verified the initialized NetHunter environment. Both runs independently verified channel 6 from captured AP beacons. Neither printed the injection-success message, and monitor TX packet counters remained zero. The initial environment had not been inventoried, so the initialized repeat is the primary result. These observations support keeping monitor injection disabled on this build; they do not test the separate `NL80211_CMD_FRAME` path.
 
 There are two distinct backend operations:
 

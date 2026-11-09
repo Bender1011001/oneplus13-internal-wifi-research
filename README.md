@@ -4,7 +4,7 @@
 
 Research and lab validation by [Bender1011001](https://github.com/Bender1011001). Initial experiments: November 8, 2026. Repository: November 9, 2026.
 
-The tested phone received radiotap captures without an external adapter, replacement kernel/module, or modified firmware image. A separate directed deauthentication experiment used `NL80211_CMD_FRAME` on managed `wlan0`, with a matching driver-reported ACK and a correlated interruption/recovery of an owned test client's responses.
+The tested phone received radiotap captures without an external adapter, replacement kernel/module, or modified firmware image. A separate directed deauthentication experiment used `NL80211_CMD_FRAME` on managed `wlan0`, with a matching driver-reported ACK and a correlated interruption/recovery of an owned test client's responses. A later [router-log review](docs/ROUTER_LOG_REVIEW.md) found two independent AP disconnect/reconnect sequences supporting the directed tests; historical clock alignment remains unresolved.
 
 This is a single-build capability finding. Independent reproduction, general monitor-mode injection, a PMF bypass, and novelty are **not established**.
 
@@ -14,8 +14,9 @@ This is a single-build capability finding. Independent reproduction, general mon
 |---|---|---|
 | Passive monitor RX | Existing QCA driver reinitializes `wlan0` with `con_mode=4` | Radiotap capture on channel 6; generic `iw ... interface add ... type monitor` was not the tested setup |
 | airodump-ng reception | ARM64 NetHunter chroot, after monitor preparation | AP and station CSV decoded; this tests the tool, not the Hijacker application |
-| Directed management TX | Managed `wlan0`, `con_mode=0`, privileged `NL80211_CMD_FRAME` | Directed lab request accepted and matching ACK reported; independent RF capture is still missing |
+| Directed management TX | Managed `wlan0`, `con_mode=0`, privileged `NL80211_CMD_FRAME` | Request accepted, matching ACK, and supporting AP reconnection records; independent RF capture and historical router clock alignment remain missing |
 | Ordinary monitor TX | `AF_PACKET` on the monitor netdev | Unavailable through the inspected monitor operations table: no `ndo_start_xmit` |
+| `aireplay-ng --test` | ARM64 NetHunter tool on monitor `wlan0` | Completed with 0/30 directed-probe responses; repeated after NetHunter startup with mounts verified; no injection success reported |
 | Simultaneous monitor RX and managed TX | Not validated | Current workflow changes driver mode and interrupts normal Wi-Fi during capture |
 
 ```mermaid
@@ -33,10 +34,14 @@ flowchart LR
 
 Its existing aireplay-ng actions do not automatically gain injection support. A directed management-frame action would need its own backend using the verified managed-interface route. Other frame types and workflows remain separate research questions.
 
+The November 9 [aireplay injection test](docs/AIREPLAY_TEST.md) returned 0/30 responses despite verified channel-6 beacon reception. The process exited with code 0; that exit code is not an injection pass. This negative monitor-path result does not invalidate the separate managed-interface experiment.
+
 - [App compatibility matrix](docs/COMPATIBILITY.md): tested results, likely integrations, and unsupported assumptions.
 - [Hijacker port plan with pinned source references](docs/HIJACKER_PORT.md): concrete changes and acceptance checks. The original upstream is archived.
 - [Full technical report](docs/REPORT.md): mechanism, prerequisites, exact build, evidence, cleanup, and prior work.
 - [Sanitized app compatibility evidence](evidence/app-compatibility.json): the successful airodump test and the failed run that preceded it.
+- [Aireplay test evidence](evidence/aireplay-test.json) and [redacted output](evidence/aireplay-output-redacted.txt): completed negative result with the NetHunter environment verified.
+- [Router-log review](docs/ROUTER_LOG_REVIEW.md) and [redacted reconnection records](evidence/router-reconnections-redacted.txt): independent AP evidence and explicit timing limits.
 
 No Hijacker fork has yet passed an end-to-end test on this handset. This repository currently publishes research, evidence summaries, and the integration plan; it is not an installable Hijacker release.
 

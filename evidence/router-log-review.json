@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-09",
+  "experiment_date_local": "2026-11-08",
+  "scope": "Retrospective review of the owner's router exports; no new radio transmission",
+  "conclusion": "Independent AP records establish two target-client disconnect/reconnect sequences. Their timing supports correlation with the two managed-interface directed tests, subject to unresolved historical router-clock alignment. The injected frame itself was not independently captured.",
+  "export_line_counts": {
+    "system": 869,
+    "advanced": 9312
+  },
+  "selected_advanced_entries": 26,
+  "sequences": [
+    {
+      "label": "original-directed-test",
+      "phone_tx_seconds_from_first_phone_tx": 0.0,
+      "router_sequence_seconds_from_first_router_sequence": 0.0,
+      "phone_minus_router_wall_seconds_if_log_uses_host_pacific_zone": 10.17036,
+      "one_userspace_submission": true,
+      "driver_ack_reported": true,
+      "router_source_lines": [
+        8165,
+        8166,
+        8167,
+        8168,
+        8169,
+        8170,
+        8171,
+        8172,
+        8173,
+        8174,
+        8175,
+        8176,
+        8177
+      ],
+      "router_entries": 13,
+      "hostapd_entries": 12,
+      "disconnect_authentication_association_and_completed_handshake": true,
+      "target_entries_in_system_log_within_120_seconds": 0,
+      "router_records_identify_received_deauth_frame_or_reason": false
+    },
+    {
+      "label": "later-app-directed-test",
+      "phone_tx_seconds_from_first_phone_tx": 3532.552612,
+      "router_sequence_seconds_from_first_router_sequence": 3530.0,
+      "phone_minus_router_wall_seconds_if_log_uses_host_pacific_zone": 12.722972,
+      "one_userspace_submission": true,
+      "driver_ack_reported": true,
+      "router_source_lines": [
+        8285,
+        8286,
+        8287,
+        8288,
+        8289,
+        8290,
+        8291,
+        8292,
+        8293,
+        8294,
+        8295,
+        8296,
+        8297
+      ],
+      "router_entries": 13,
+      "hostapd_entries": 12,
+      "disconnect_authentication_association_and_completed_handshake": true,
+      "target_entries_in_system_log_within_120_seconds": 0,
+      "router_records_identify_received_deauth_frame_or_reason": false
+    }
+  ],
+  "interval_comparison_seconds": {
+    "phone_transmissions": 3532.552612,
+    "router_sequences": 3530.0,
+    "phone_interval_minus_router_interval": 2.552612
+  },
+  "clock_limits": {
+    "raw_log_timezone_label_present": false,
+    "historical_router_phone_clock_calibration_available": false,
+    "later_router_ui_timezone": "Mountain_Time",
+    "nominal_wall_time_deltas_assume_host_pacific_zone": true,
+    "later_ui_observation_proves_historical_offset": false,
+    "relative_router_and_phone_origins_are_distinct": true,
+    "exact_reaction_or_outage_duration_established": false
+  },
+  "limits": [
+    "No independent RF capture of the submitted deauthentication frame",
+    "No recorded deauthentication reason or transmitter attribution in these excerpts",
+    "Clock alignment remains uncertain; these sequences are supporting correlation, not conclusive packet-level causality",
+    "One handset, one build, one owned AP/client pair; no independent researcher reproduction",
+    "No PMF bypass or general monitor-TX support established"
+  ],
+  "redaction": "Only the two target-client sequences are included. Role labels replace all MAC addresses; relative times replace absolute router timestamps. No other clients, raw frames, credentials or network names are published.",
+  "source_artifacts": [
+    {
+      "artifact_label": "router-system-export",
+      "bytes": 129079,
+      "sha256": "95a7526f3cc1fd455e0287159c51cea431f0dcc7be620e1799ba2fa09db085eb",
+      "original_published": false
+    },
+    {
+      "artifact_label": "router-advanced-export",
+      "bytes": 1295319,
+      "sha256": "043689468d5d6f2538bac9d92bf3c2f8e80df6c5403a1b792bf3348fb99a9db9",
+      "original_published": false
+    },
+    {
+      "artifact_label": "original-directed-tx",
+      "bytes": 655,
+      "sha256": "06bbd43576a9cee63a296da70ca41ba301dda8133a4c7a38471435dbf915fb57",
+      "original_published": false
+    },
+    {
+      "artifact_label": "app-directed-tx-result",
+      "bytes": 2123,
+      "sha256": "766d7c1abaac5e7fb8aadb4a2d2777e4b5c97f05edfd3933bfa3556dd1c8f0dc",
+      "original_published": false
+    },
+    {
+      "artifact_label": "later-router-clock-ui-observations",
+      "bytes": 859,
+      "sha256": "188172df81d370812c6899e680d13503092a87311ffe54f202657a6ab2bff7ee",
+      "original_published": false
+    }
+  ]
+}
