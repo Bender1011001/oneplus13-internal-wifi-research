@@ -30,20 +30,20 @@ flowchart LR
 
 ## NetHunter apps and Hijacker
 
-**There is a credible path to a working Hijacker fork, but support must be implemented per feature.** The underlying airodump-ng receive path already passed a phone test. Hijacker still needs a QCA monitor lifecycle, compatible tool execution, capture-file access, and restoration handling.
+**An experimental [Hijacker QCA Lab fork](https://github.com/Bender1011001/Hijacker-QCA) is now built; handset validation is pending.** It implements bounded channel-6 capture, AP/client CSV display, restoration, export, and a separate single-frame managed-interface lab action. Seventeen host tests passed. The underlying airodump-ng receive path already passed a separate phone test; that does not establish success in this APK.
 
 Its existing aireplay-ng actions do not automatically gain injection support. A directed management-frame action would need its own backend using the verified managed-interface route. Other frame types and workflows remain separate research questions.
 
 The November 9 [aireplay injection test](docs/AIREPLAY_TEST.md) returned 0/30 responses despite verified channel-6 beacon reception. The process exited with code 0; that exit code is not an injection pass. This negative monitor-path result does not invalidate the separate managed-interface experiment.
 
 - [App compatibility matrix](docs/COMPATIBILITY.md): tested results, likely integrations, and unsupported assumptions.
-- [Hijacker port plan with pinned source references](docs/HIJACKER_PORT.md): concrete changes and acceptance checks. The original upstream is archived.
+- [Hijacker prototype and pinned source references](docs/HIJACKER_PORT.md): implemented scope, host results and pending handset checks. The original upstream is archived.
 - [Full technical report](docs/REPORT.md): mechanism, prerequisites, exact build, evidence, cleanup, and prior work.
 - [Sanitized app compatibility evidence](evidence/app-compatibility.json): the successful airodump test and the failed run that preceded it.
 - [Aireplay test evidence](evidence/aireplay-test.json) and [redacted output](evidence/aireplay-output-redacted.txt): completed negative result with the NetHunter environment verified.
 - [Router-log review](docs/ROUTER_LOG_REVIEW.md) and [redacted reconnection records](evidence/router-reconnections-redacted.txt): independent AP evidence and explicit timing limits.
 
-No Hijacker fork has yet passed an end-to-end test on this handset. This repository currently publishes research, evidence summaries, and the integration plan; it is not an installable Hijacker release.
+No Hijacker fork has yet passed an end-to-end test on this handset. This repository publishes research and evidence summaries; the separate fork contains application source and build instructions. A public APK release awaits handset acceptance.
 
 ## Tested environment
 
