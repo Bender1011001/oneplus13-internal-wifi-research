@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source_module_sha256": "d6bd3fac600aaeba858e83292df167bc410457c07e422047c1a181c31d24d3df",
+  "extraction": {
+    "symbol": "wlan_mon_drv_ops",
+    "size": 704,
+    "raw_nonzero_offsets": [],
+    "relocations": [
+      {
+        "offset": 16,
+        "target": "hdd_mon_open",
+        "target_section": 13,
+        "addend": 2522620
+      },
+      {
+        "offset": 24,
+        "target": "hdd_stop",
+        "target_section": 13,
+        "addend": 2523568
+      },
+      {
+        "offset": 184,
+        "target": "hdd_get_stats",
+        "target_section": 13,
+        "addend": 0
+      }
+    ]
+  },
+  "interpretation": "The installed wlan_mon_drv_ops table has open, stop and statistics relocations; no ndo_start_xmit entry is present."
+}

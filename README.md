@@ -1,0 +1,75 @@
+# OnePlus 13 internal Wi-Fi research
+
+**Passive monitor reception and a separate managed-interface management-frame TX path, demonstrated on one rooted OnePlus 13 using its internal radio.**
+
+Research and lab validation by [Bender1011001](https://github.com/Bender1011001). Initial experiments: November 8, 2026. Repository: November 9, 2026.
+
+The tested phone received radiotap captures without an external adapter, replacement kernel/module, or modified firmware image. A separate directed deauthentication experiment used `NL80211_CMD_FRAME` on managed `wlan0`, with a matching driver-reported ACK and a correlated interruption/recovery of an owned test client's responses.
+
+This is a single-build capability finding. Independent reproduction, general monitor-mode injection, a PMF bypass, and novelty are **not established**.
+
+## What works, and through which path?
+
+| Capability | Observed path | Evidence and limit |
+|---|---|---|
+| Passive monitor RX | Existing QCA driver reinitializes `wlan0` with `con_mode=4` | Radiotap capture on channel 6; generic `iw ... interface add ... type monitor` was not the tested setup |
+| airodump-ng reception | ARM64 NetHunter chroot, after monitor preparation | AP and station CSV decoded; this tests the tool, not the Hijacker application |
+| Directed management TX | Managed `wlan0`, `con_mode=0`, privileged `NL80211_CMD_FRAME` | Directed lab request accepted and matching ACK reported; independent RF capture is still missing |
+| Ordinary monitor TX | `AF_PACKET` on the monitor netdev | Unavailable through the inspected monitor operations table: no `ndo_start_xmit` |
+| Simultaneous monitor RX and managed TX | Not validated | Current workflow changes driver mode and interrupts normal Wi-Fi during capture |
+
+```mermaid
+flowchart LR
+    R[Passive capture] --> M[con_mode=4: monitor wlan0]
+    M --> C[tcpdump / airodump-ng]
+    T[Privileged management request] --> W[con_mode=0: managed wlan0]
+    W --> N[NL80211_CMD_FRAME]
+    N --> Q[QCA management TX and status]
+```
+
+## NetHunter apps and Hijacker
+
+**There is a credible path to a working Hijacker fork, but support must be implemented per feature.** The underlying airodump-ng receive path already passed a phone test. Hijacker still needs a QCA monitor lifecycle, compatible tool execution, capture-file access, and restoration handling.
+
+Its existing aireplay-ng actions do not automatically gain injection support. A directed management-frame action would need its own backend using the verified managed-interface route. Other frame types and workflows remain separate research questions.
+
+- [App compatibility matrix](docs/COMPATIBILITY.md): tested results, likely integrations, and unsupported assumptions.
+- [Hijacker port plan with pinned source references](docs/HIJACKER_PORT.md): concrete changes and acceptance checks. The original upstream is archived.
+- [Full technical report](docs/REPORT.md): mechanism, prerequisites, exact build, evidence, cleanup, and prior work.
+- [Sanitized app compatibility evidence](evidence/app-compatibility.json): the successful airodump test and the failed run that preceded it.
+
+No Hijacker fork has yet passed an end-to-end test on this handset. This repository currently publishes research, evidence summaries, and the integration plan; it is not an installable Hijacker release.
+
+## Tested environment
+
+| Item | Tested value |
+|---|---|
+| Handset | OnePlus 13 CPH2655, Snapdragon 8 Elite / SM8750 |
+| OS | Android 16, `CPH2655_16.0.8.301(EX01)` |
+| Kernel | `6.6.89-android15-8-g97a9aaefab9a-ab14519050-4k` |
+| Wi-Fi module | `qca_cld3_peach_v2` |
+| Module SHA-256 | `d6bd3fac600aaeba858e83292df167bc410457c07e422047c1a181c31d24d3df` |
+| Root | Magisk; KernelSU not tested |
+| Userspace | NetHunter Lite ARM64 chroot, Python 3 standard-library netlink client, tcpdump and airodump-ng |
+
+The module name, SoC family, or root access alone does not establish compatibility. Python was the tested client implementation, not a requirement of the kernel API itself. See the [requirements and exact versions](docs/REPORT.md#2-software-and-hardware-requirements).
+
+## Safe reproduction and evidence
+
+Management-frame transmission is for explicitly authorized, tester-owned hardware on a controlled network. It can interrupt service. Use a noncritical target and a bounded test; monitor recovery and stop if effects extend beyond that target. Passive captures can also contain other people's identifiers and traffic.
+
+The [report's reproduction protocol](docs/REPORT.md#4-reproduction-and-safety-protocol) starts with read-only inventory, separates RX and TX, and includes restoration. This repository omits private captures, target addresses, credentials, proprietary firmware, and the lab's target-specific transmitter.
+
+Evidence summaries are in [evidence/](evidence/). Original artifact hashes provide provenance, not independent proof of their contents. The host-only verifier checks repository checksums, JSON syntax, and local Markdown link targets; it does not operate a phone:
+
+```sh
+python tools/verify_repository.py
+```
+
+## Contributing and credit
+
+Independent reproductions and focused compatibility fixes are welcome. Follow [CONTRIBUTING.md](CONTRIBUTING.md), including negative results and exact build details. Keep receive support, management TX, and generic injection claims separate.
+
+The passive setup was informed by [AviumUI WLAN tools](https://github.com/spiral009/aviumui-wlan-tools/tree/228527778139acd2333593ff1c0982c30a597a3d). OnePlus public kernel/driver sources guided analysis; the installed binary was checked separately. See [prior work and attribution](docs/REPORT.md#5-scope-prior-work-and-attribution).
+
+Original repository materials use the [MIT license](LICENSE). Linked third-party projects retain their own licenses; a Hijacker-derived fork must preserve its GPL-3.0 obligations. For attribution, use [CITATION.cff](CITATION.cff) and cite the exact commit you used.

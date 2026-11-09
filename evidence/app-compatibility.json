@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "experiment_date_local": "2026-11-08",
+  "timezone": "America/Los_Angeles",
+  "summary_date": "2026-11-09",
+  "scope": "Same single handset and build as observed-results.json; actual Hijacker application not tested",
+  "tested_runner": "Private Bender Lab 0.1.0 backend",
+  "tool": "airodump-ng",
+  "package": "aircrack-ng",
+  "package_version": "1:1.7+git20230807.4bf83f1a-3",
+  "environment": "NetHunter Lite ARM64 chroot",
+  "successful_receive_check": {
+    "channel": 6,
+    "capture_window_seconds": 12,
+    "csv_created": true,
+    "access_point_rows": 1,
+    "selected_owned_ap_beacons": 28,
+    "owned_test_station_packets": 2,
+    "normal_wifi_restored": true,
+    "monitor_transmission_tested": false
+  },
+  "earlier_failure": {
+    "csv_created": false,
+    "reported_error": "RuntimeError: airodump-ng did not produce its CSV output",
+    "corrective_changes": [
+      "--background 1",
+      "LANG=C.UTF-8 and LC_ALL=C.UTF-8"
+    ],
+    "single_cause_isolated": false
+  },
+  "nonfatal_warning": "fopen fails on /proc/meminfo: No such file or directory",
+  "untested": [
+    "Hijacker application end-to-end",
+    "Hijacker bundled tool binaries on this phone",
+    "complete WPA handshake capture",
+    "aireplay-ng monitor transmission",
+    "channel hopping",
+    "5 GHz or 6 GHz monitor reception",
+    "simultaneous monitor RX and managed TX"
+  ],
+  "provenance_note": "Labels replace private paths. Original artifacts remain private; hashes do not independently prove their contents. Network and station identifiers and raw CSV are omitted.",
+  "source_artifacts": [
+    {
+      "artifact_label": "successful-airodump-result",
+      "bytes": 279,
+      "sha256": "317b261fe97a8717608a21adea6fd08ec076b560e8de3042ead167230c9815d1",
+      "original_published": false
+    },
+    {
+      "artifact_label": "successful-airodump-csv",
+      "bytes": 584,
+      "sha256": "d88dfffb0e38a4323e21dae95b4ba0e6370ce099d50713717a8ba295b1cab6db",
+      "original_published": false
+    },
+    {
+      "artifact_label": "successful-airodump-operation-log",
+      "bytes": 416,
+      "sha256": "d65022310501b72f3294dad4b4fc83b13e4412c7e31f70a587cdc5cfe0d6bac9",
+      "original_published": false
+    },
+    {
+      "artifact_label": "successful-airodump-capture-log",
+      "bytes": 94,
+      "sha256": "9625538822e874ef43c83ecc78a407238df8b8ed13ca77178ab3e9137dfa3cfd",
+      "original_published": false
+    },
+    {
+      "artifact_label": "failed-airodump-result",
+      "bytes": 141,
+      "sha256": "8194ef0ae553667acbbba8322823fe5f121618bb654274b100aabfbae7ec1084",
+      "original_published": false
+    },
+    {
+      "artifact_label": "tool-version-inventory",
+      "bytes": 4570,
+      "sha256": "20af356d6189b0257bad6bda9bc51e65d223afe68f1100e517c41a783f68a282",
+      "original_published": false
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "transformation": "Selected fields from mgmt-wiz-directed.log. MAC/SSID identifiers and frame hex replaced by roles; absolute timestamp omitted.",
+  "interface": {
+    "name": "wlan0",
+    "type": "managed",
+    "extended_features": {
+      "MGMT_TX_RANDOM_TA": true,
+      "MGMT_TX_RANDOM_TA_CONNECTED": false,
+      "AUTH_AND_DEAUTH_RANDOM_TA": true
+    },
+    "feature_bitmap_hex": "c055fe03840202c001"
+  },
+  "attempt": {
+    "userspace_submissions": 1,
+    "destination_role": "owned_test_bulb",
+    "source_role": "owned_lab_ap",
+    "bssid_role": "owned_lab_ap",
+    "frequency_mhz": 2437,
+    "management_subtype": "deauthentication",
+    "reason_code": 3,
+    "offchannel_tx_ok": true,
+    "duration_ms": 100
+  },
+  "kernel_accepted": true,
+  "response_cookies": [
+    256
+  ],
+  "tx_status": {
+    "cookie": 256,
+    "ack": true
+  },
+  "independent_rf_capture_available": false
+}

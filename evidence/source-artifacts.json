@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "note": "Original local evidence is retained separately. These hashes identify originals; they do not independently validate their contents or the experiment. No originals, binaries or captures are redistributed in this package.",
+  "artifacts": [
+    {
+      "filename": "INTERNAL_WIFI_RESULTS.md",
+      "bytes": 6003,
+      "sha256": "4e160651c016d7fbdee7196957079881c6128cfcb1abb8f9562ab897fbc49f63",
+      "included_in_package": false
+    },
+    {
+      "filename": "experiment-summary.json",
+      "bytes": 671,
+      "sha256": "5d0d47d065e50a99d56bd2080779f51e0f2a87c45480763c8c0e04b002368481",
+      "included_in_package": false
+    },
+    {
+      "filename": "monitor-ops-evidence.json",
+      "bytes": 470,
+      "sha256": "600508c2a2fe33fee4ad5cd393955be8f147d4ac9b3b173b3fe462425138b6b0",
+      "included_in_package": false
+    },
+    {
+      "filename": "monitor-test-2.log",
+      "bytes": 1349,
+      "sha256": "ef58fb65ec1b5f66326b79e8fceff4cd977ad8fab04ccb0aac58f67d44999439",
+      "included_in_package": false
+    },
+    {
+      "filename": "internal-monitor-proof.pcap",
+      "bytes": 2904,
+      "sha256": "ae29a5cbd14d16e7e30251eff6a4f53affbc99613a8a56b90eb56920a89dfb37",
+      "included_in_package": false
+    },
+    {
+      "filename": "mgmt-readonly.log",
+      "bytes": 236,
+      "sha256": "c4b5b3c8ec0a91a1ef428a49f34c5898e02ee11310f3e4bf3d0da473eb0b7413",
+      "included_in_package": false
+    },
+    {
+      "filename": "mgmt-self-deauth.log",
+      "bytes": 624,
+      "sha256": "f3d6a7865f235bef2aadf4b52279c5d3b4852de3260d762c88cf6703e458c6bd",
+      "included_in_package": false
+    },
+    {
+      "filename": "mgmt-wiz-directed.log",
+      "bytes": 655,
+      "sha256": "06bbd43576a9cee63a296da70ca41ba301dda8133a4c7a38471435dbf915fb57",
+      "included_in_package": false
+    },
+    {
+      "filename": "wiz-discovery.jsonl",
+      "bytes": 103,
+      "sha256": "6f76e099f73d5cb39091a75f13e6d7b8b8c7ccffd3a7a197d76cf5b6726f04e4",
+      "included_in_package": false
+    },
+    {
+      "filename": "wiz-baseline.log",
+      "bytes": 3056,
+      "sha256": "0563d2b057746372a6636586c1f07ea653f52e45d11fb1237d8115afe37ecaa4",
+      "included_in_package": false
+    },
+    {
+      "filename": "wiz-baseline.pcap",
+      "bytes": 3592,
+      "sha256": "e6d2e939774c1dce3e84fa6e9b4588fd0d51eb55c392c72dcfdcc2a087330698",
+      "included_in_package": false
+    },
+    {
+      "filename": "wiz-baseline-observation.jsonl",
+      "bytes": 3801,
+      "sha256": "655747a5fcca0ac2cb80e5a47103e3573e160d2f542d5e4aa19befa5527412d5",
+      "included_in_package": false
+    },
+    {
+      "filename": "wiz-directed-observation.jsonl",
+      "bytes": 3862,
+      "sha256": "3d48643c093461305ea0ed6e35c93320b4151817d4228729bcd6ff4bc50903df",
+      "included_in_package": false
+    },
+    {
+      "filename": "wiz-recovery-observation.jsonl",
+      "bytes": 3393,
+      "sha256": "e85df8dc2b06c710c99c70379c8efaabfa9c194597c2201f5d42c9c7b2a23141",
+      "included_in_package": false
+    },
+    {
+      "filename": "firmware-path-audit.log",
+      "bytes": 143,
+      "sha256": "93ee431f11c433e57d313e2b621d3cf39545311aa2f626099ca29c1cf0ddf043",
+      "included_in_package": false
+    },
+    {
+      "filename": "final-device-state.log",
+      "bytes": 359,
+      "sha256": "1f13ad1151e1ea559fc655ae7fc1aa1d797acc72a9528ea5e8eb73fb91583e24",
+      "included_in_package": false
+    },
+    {
+      "filename": "mgmt-probe.py",
+      "bytes": 8266,
+      "sha256": "63665f27c8308a1ac470b88e34b09d3f2a3c97edb3527a92a975911204617bf5",
+      "included_in_package": false
+    },
+    {
+      "filename": "nl80211-constants.json",
+      "bytes": 21056,
+      "sha256": "5d406a13fba230a0fb63b5f821e9ea0f1a4145dd09887c123f6b44f2db323734",
+      "included_in_package": false
+    },
+    {
+      "filename": "internal-monitor.sh",
+      "bytes": 1388,
+      "sha256": "f2ea9b0133d9defeb6db9b9c2530ab576ce078d67b1d4702527b65dcbc2e2d5a",
+      "included_in_package": false
+    },
+    {
+      "filename": "qca_cld3_peach_v2.ko",
+      "bytes": 19718512,
+      "sha256": "d6bd3fac600aaeba858e83292df167bc410457c07e422047c1a181c31d24d3df",
+      "included_in_package": false
+    },
+    {
+      "filename": "driver-mgmt-dossier.json",
+      "bytes": 669952,
+      "sha256": "5aaa412c999e166eaf5ee3186659ed4eb8dc647955059e347e4edd45d5aaebfa",
+      "included_in_package": false
+    },
+    {
+      "filename": "qca-cld3-peach-analysis.rea",
+      "bytes": 741023,
+      "sha256": "fc882c23036c9bd2cf8708bc6bf7f9fbffb6f6cc9daab6f0c573b4b9cd3460e9",
+      "included_in_package": false
+    }
+  ]
+}

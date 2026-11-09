@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pcap
+*.pcapng
+*.cap
+*.apk
+*.ko
+*.log
+*.key
+*.keystore
+local.properties
+.DS_Store

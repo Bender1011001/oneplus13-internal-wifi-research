@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the exact commit used when building on these observations."
+title: "OnePlus 13 internal Wi-Fi: passive monitor RX and managed-interface management TX"
+authors:
+  - name: "Bender1011001"
+    website: "https://github.com/Bender1011001"
+date-released: 2026-11-09
+version: 0.1.0
+type: software
+repository-code: "https://github.com/Bender1011001/oneplus13-internal-wifi-research"
+license: MIT
+keywords:
+  - OnePlus 13
+  - Android
+  - NetHunter
+  - Wi-Fi
+  - nl80211

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "report_date": "2026-11-08",
+  "report_timezone": "America/Los_Angeles",
+  "status": "single_handset_single_build_observation",
+  "environment": {
+    "model": "OnePlus 13 CPH2655",
+    "platform": "Snapdragon 8 Elite / SM8750",
+    "os_build": "CPH2655_16.0.8.301(EX01)",
+    "android_version": 16,
+    "kernel_release": "6.6.89-android15-8-g97a9aaefab9a-ab14519050-4k",
+    "driver_module": "qca_cld3_peach_v2",
+    "module_sha256": "d6bd3fac600aaeba858e83292df167bc410457c07e422047c1a181c31d24d3df",
+    "root_tested": "Magisk",
+    "root_alternatives_not_tested": [
+      "KernelSU"
+    ],
+    "python_environment_tested": "Python 3 in NetHunter Lite ARM64 chroot",
+    "python_client_dependencies": "standard library and extracted nl80211 constants",
+    "external_wifi_adapter": false,
+    "kernel_or_module_replaced": false,
+    "firmware_images_modified": false,
+    "temporary_firmware_staging_used_for_monitor": true
+  },
+  "passive_monitor": {
+    "mode": 4,
+    "netdev_name": "wlan0",
+    "interface_type": "monitor",
+    "interface_creation": "driver-controlled reinitialization during con_mode change",
+    "generic_iw_interface_add_validated": false,
+    "capture_link_type": "IEEE802_11_RADIO",
+    "initial_beacons_captured": 20,
+    "initial_packets_received_by_filter": 25,
+    "initial_kernel_drops": 0,
+    "target_filtered_frames_captured": 31,
+    "channel": 6,
+    "monitor_ndo_start_xmit_present": false
+  },
+  "active_management_tx": {
+    "mode": 0,
+    "netdev_name": "wlan0",
+    "interface_type": "managed",
+    "command": "NL80211_CMD_FRAME",
+    "extended_features": {
+      "MGMT_TX_RANDOM_TA": true,
+      "MGMT_TX_RANDOM_TA_CONNECTED": false,
+      "AUTH_AND_DEAUTH_RANDOM_TA": true
+    },
+    "raw_feature_bitmap_hex": "c055fe03840202c001",
+    "target": "owned WiZ ESP25_SHRGB_01, firmware 1.38.0",
+    "source_role": "owned lab AP",
+    "destination_role": "owned test bulb",
+    "frequency_mhz": 2437,
+    "phone_associated_frequency_mhz": 6455,
+    "userspace_directed_submissions": 1,
+    "hardware_retries_possible": true,
+    "kernel_accepted": true,
+    "matching_tx_status_cookie": true,
+    "driver_reported_recipient_ack": true,
+    "earlier_separate_phone_to_owned_ap_test_reported_ack": true,
+    "fresh_boot_active_only_reproduction_performed": false
+  },
+  "independent_target_observation": {
+    "method": "read-only WiZ getPilot UDP query, approximately once per second",
+    "counts": {
+      "baseline": {
+        "total": 28,
+        "successful": 28
+      },
+      "directed_test": {
+        "total": 30,
+        "successful": 23
+      },
+      "recovery": {
+        "total": 25,
+        "successful": 25
+      }
+    },
+    "failed_directed_test_sample_indices": [
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "phone_minus_host_seconds_estimate": 1.0581824779510498,
+    "clock_calibration_roundtrip_seconds": 0.07378005981445312,
+    "first_failed_probe_seconds_from_estimated_tx": 0.599062,
+    "first_recovery_probe_seconds_from_estimated_tx": 25.722861,
+    "observation_gap_before_recovery": true,
+    "exact_outage_duration_known": false
+  },
+  "final_state": {
+    "driver_mode": 0,
+    "normal_managed_wifi_connected": true,
+    "temporary_firmware_path_cleared_to_kernel_default": true,
+    "test_bulb_responsive": true
+  },
+  "limits": {
+    "independent_rf_capture_of_injected_frame": false,
+    "ap_association_logs_collected": false,
+    "second_handset_reproduction": false,
+    "pmf_bypass_demonstrated": false,
+    "arbitrary_packet_injection_demonstrated": false,
+    "privilege_escalation_demonstrated": false,
+    "novelty_established": false
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "transformation": "Original absolute probe epochs replaced by seconds relative to estimated host-clock TX time. IP/MAC/RSSI and raw error text omitted; sample indices, status and latency retained.",
+  "clock_adjustment_is_estimated": true,
+  "exact_outage_duration_known": false,
+  "observations": {
+    "baseline": [
+      {
+        "sample": 0,
+        "seconds_from_estimated_tx": -96.429525,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 1,
+        "seconds_from_estimated_tx": -95.42492,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 2,
+        "seconds_from_estimated_tx": -94.424639,
+        "ok": true,
+        "latency_ms": 47.0
+      },
+      {
+        "sample": 3,
+        "seconds_from_estimated_tx": -93.41792,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 4,
+        "seconds_from_estimated_tx": -92.424459,
+        "ok": true,
+        "latency_ms": 94.0
+      },
+      {
+        "sample": 5,
+        "seconds_from_estimated_tx": -91.4162,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 6,
+        "seconds_from_estimated_tx": -90.423712,
+        "ok": true,
+        "latency_ms": 47.0
+      },
+      {
+        "sample": 7,
+        "seconds_from_estimated_tx": -89.422551,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 8,
+        "seconds_from_estimated_tx": -88.415589,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 9,
+        "seconds_from_estimated_tx": -87.407562,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 10,
+        "seconds_from_estimated_tx": -86.405274,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 11,
+        "seconds_from_estimated_tx": -85.40643,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 12,
+        "seconds_from_estimated_tx": -84.405419,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 13,
+        "seconds_from_estimated_tx": -83.413783,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 14,
+        "seconds_from_estimated_tx": -82.404546,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 15,
+        "seconds_from_estimated_tx": -81.41294,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 16,
+        "seconds_from_estimated_tx": -80.411721,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 17,
+        "seconds_from_estimated_tx": -79.404076,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 18,
+        "seconds_from_estimated_tx": -78.407369,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 19,
+        "seconds_from_estimated_tx": -77.403422,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 20,
+        "seconds_from_estimated_tx": -76.403272,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 21,
+        "seconds_from_estimated_tx": -75.412982,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 22,
+        "seconds_from_estimated_tx": -74.40283,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 23,
+        "seconds_from_estimated_tx": -73.409768,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 24,
+        "seconds_from_estimated_tx": -72.408752,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 25,
+        "seconds_from_estimated_tx": -71.401731,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 26,
+        "seconds_from_estimated_tx": -70.408934,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 27,
+        "seconds_from_estimated_tx": -69.411966,
+        "ok": true,
+        "latency_ms": 15.0
+      }
+    ],
+    "directed_test": [
+      {
+        "sample": 0,
+        "seconds_from_estimated_tx": -22.421394,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 1,
+        "seconds_from_estimated_tx": -21.416613,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 2,
+        "seconds_from_estimated_tx": -20.423354,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 3,
+        "seconds_from_estimated_tx": -19.415719,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 4,
+        "seconds_from_estimated_tx": -18.422692,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 5,
+        "seconds_from_estimated_tx": -17.421645,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 6,
+        "seconds_from_estimated_tx": -16.423832,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 7,
+        "seconds_from_estimated_tx": -15.421103,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 8,
+        "seconds_from_estimated_tx": -14.415538,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 9,
+        "seconds_from_estimated_tx": -13.40503,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 10,
+        "seconds_from_estimated_tx": -12.405368,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 11,
+        "seconds_from_estimated_tx": -11.412772,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 12,
+        "seconds_from_estimated_tx": -10.404459,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 13,
+        "seconds_from_estimated_tx": -9.411471,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 14,
+        "seconds_from_estimated_tx": -8.41133,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 15,
+        "seconds_from_estimated_tx": -7.401818,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 16,
+        "seconds_from_estimated_tx": -6.411191,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 17,
+        "seconds_from_estimated_tx": -5.401967,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 18,
+        "seconds_from_estimated_tx": -4.410047,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 19,
+        "seconds_from_estimated_tx": -3.408833,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 20,
+        "seconds_from_estimated_tx": -2.401714,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 21,
+        "seconds_from_estimated_tx": -1.408421,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 22,
+        "seconds_from_estimated_tx": -0.411581,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 23,
+        "seconds_from_estimated_tx": 0.599062,
+        "ok": false,
+        "outcome": "timeout"
+      },
+      {
+        "sample": 24,
+        "seconds_from_estimated_tx": 1.599094,
+        "ok": false,
+        "outcome": "timeout"
+      },
+      {
+        "sample": 25,
+        "seconds_from_estimated_tx": 2.591711,
+        "ok": false,
+        "outcome": "timeout"
+      },
+      {
+        "sample": 26,
+        "seconds_from_estimated_tx": 3.58633,
+        "ok": false,
+        "outcome": "timeout"
+      },
+      {
+        "sample": 27,
+        "seconds_from_estimated_tx": 4.59296,
+        "ok": false,
+        "outcome": "timeout"
+      },
+      {
+        "sample": 28,
+        "seconds_from_estimated_tx": 5.600167,
+        "ok": false,
+        "outcome": "timeout"
+      },
+      {
+        "sample": 29,
+        "seconds_from_estimated_tx": 6.613041,
+        "ok": false,
+        "outcome": "timeout"
+      }
+    ],
+    "recovery": [
+      {
+        "sample": 0,
+        "seconds_from_estimated_tx": 25.722861,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 1,
+        "seconds_from_estimated_tx": 26.719291,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 2,
+        "seconds_from_estimated_tx": 27.720519,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 3,
+        "seconds_from_estimated_tx": 28.711432,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 4,
+        "seconds_from_estimated_tx": 29.720489,
+        "ok": true,
+        "latency_ms": 125.0
+      },
+      {
+        "sample": 5,
+        "seconds_from_estimated_tx": 30.720488,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 6,
+        "seconds_from_estimated_tx": 31.714121,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 7,
+        "seconds_from_estimated_tx": 32.722393,
+        "ok": true,
+        "latency_ms": 93.0
+      },
+      {
+        "sample": 8,
+        "seconds_from_estimated_tx": 33.715061,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 9,
+        "seconds_from_estimated_tx": 34.721766,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 10,
+        "seconds_from_estimated_tx": 35.721685,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 11,
+        "seconds_from_estimated_tx": 36.714681,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 12,
+        "seconds_from_estimated_tx": 37.722533,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 13,
+        "seconds_from_estimated_tx": 38.715515,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 14,
+        "seconds_from_estimated_tx": 39.714909,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 15,
+        "seconds_from_estimated_tx": 40.723729,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 16,
+        "seconds_from_estimated_tx": 41.715897,
+        "ok": true,
+        "latency_ms": 109.0
+      },
+      {
+        "sample": 17,
+        "seconds_from_estimated_tx": 42.711282,
+        "ok": true,
+        "latency_ms": 15.0
+      },
+      {
+        "sample": 18,
+        "seconds_from_estimated_tx": 43.724531,
+        "ok": true,
+        "latency_ms": 46.0
+      },
+      {
+        "sample": 19,
+        "seconds_from_estimated_tx": 44.721037,
+        "ok": true,
+        "latency_ms": 62.0
+      },
+      {
+        "sample": 20,
+        "seconds_from_estimated_tx": 45.725569,
+        "ok": true,
+        "latency_ms": 78.0
+      },
+      {
+        "sample": 21,
+        "seconds_from_estimated_tx": 46.733059,
+        "ok": true,
+        "latency_ms": 110.0
+      },
+      {
+        "sample": 22,
+        "seconds_from_estimated_tx": 47.726126,
+        "ok": true,
+        "latency_ms": 31.0
+      },
+      {
+        "sample": 23,
+        "seconds_from_estimated_tx": 48.726506,
+        "ok": true,
+        "latency_ms": 47.0
+      },
+      {
+        "sample": 24,
+        "seconds_from_estimated_tx": 49.734039,
+        "ok": true,
+        "latency_ms": 78.0
+      }
+    ]
+  }
+}
